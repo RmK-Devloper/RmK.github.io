@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <title>Welcome</title>
+        <style>
+           /* Reset some default browser styles */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a background color and text color for the body */
+body {
+  background-color: #f0f0f0;
+  color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Create a header with a background color */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Create a container for the main content */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style headings */
+h1, h2 {
+  color: #333;
+}
+
+/* Style paragraphs */
+p {
+  margin-bottom: 20px;
+}
+
+/* Create a footer with a background color */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Style navigation menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+}
+  #timer {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+        }
+
+            </style>
+    </head>
+    <body>
+        <header> Welcome <br>
+
+            Made By Ramkrishna
+        </header>
+        <h1>Welcome To My WebSite</h1> <br>
+        In My WebSite You Will Get Codes And More<br>
+        <br>
+        WebSite Under Devlopement
+       
+         <div id="timer">15 days 00:00:00</div>
+
+    <script>
+        // Set the target date to 15 days from now
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 15);
+
+        // Function to update the timer every second
+        function updateTimer() {
+            const currentDate = new Date();
+            const timeLeft = targetDate - currentDate;
+
+            if (timeLeft <= 0) {
+                document.getElementById("timer").innerHTML = "Time's up!";
+            } else {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById("timer").innerHTML = `${days} days ${hours}:${minutes}:${seconds}`;
+            }
+        }
+
+        // Update the timer immediately and then every second
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    </script>
+<footer>
+    Follow Us 
+</footer>
+    </body>
+</html>
